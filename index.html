@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-Calc</title>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <style>
+        * {
+    font-family: Quicksand;
+    font-size: 16px;
+    color: #333;
+    }
+    
+    h1{
+        text-align: center;
+        font-weight: 600;
+        
+    }
+    body {
+       
+    /* color: red; */
+    background-image: url(./images/yellowBack.jpg);
+    margin: 0;
+    height: 100vh;
+    padding: 0;
+    border: 0;
+     background-repeat: no-repeat;
+     background-size: cover;
+    /* linear-gradient(to bottom right, #bebe0d, #cc141d); */
+    } 
+    
+    div{
+        position: absolute;
+        top : 30%;
+        left: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%,-50px);
+        padding: 5px;
+        box-shadow: 2px 2px 20px #919191;
+       
+
+    }
+
+   
+
+
+    </style>
+</head>
+<body>
+
+    <div >
+        <h1>BMI Calculator</h1>
+
+        <p>Weight <input type="number" id="weightInput" placeholder="Enter weight in kg" required></p>
+        <p>Height <input type="number" id="heightInput" placeholder="Enter height in meters" required>
+</p>
+
+        <button id="calculateBtn" onclick="calculateBMI()">Calculate</button>
+
+        <p>Your BMI = <span id="result"></span></p>
+    </div>
+
+
+
+    <script>
+        // The BMI formula is: BMI = weight (kg) / (height (m) * height (m)).
+        function calculateBMI(){
+            var w=parseFloat(document.getElementById("weightInput").value);
+            var h=parseFloat(document.getElementById("heightInput").value);
+
+            var bmi = w /(h*h);
+            document.getElementById("result").innerHTML= bmi;
+        }
+    </script>
+</body>
+</html>
